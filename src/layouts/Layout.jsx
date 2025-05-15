@@ -1,6 +1,6 @@
 import Dashboard from "@/components/dashboard/Dashboard"
+import Navbar from "@/components/navbar/Navbar"
 import Sidebar from "@/components/sidebar/Sidebar"
-import { AlignJustify, AlignLeft } from "lucide-react"
 import { useState } from "react"
 
 
@@ -15,12 +15,9 @@ const Layout = () => {
 
             <div><Sidebar miniSidebar={miniSidebar} setMiniSidebar={setMiniSidebar} sidebarToggle={sidebarToggle} /></div>
 
-            <div className={`flex-1 transition-all max-md:ml-0 ${miniSidebar ? 'ml-20' : 'ml-64'}`}>
+            <div className={`flex-1 transition-all max-md:ml-0 ${miniSidebar ? 'ml-20' : 'ml-64'} bg-neutral-100`}>
                 {/* navbar */}
-                <nav className="flex w-full px-4 bg-amber-100 justify-between">
-                    <AlignLeft onClick={() => setMiniSidebar(prev => !prev)} />
-                    <AlignJustify onClick={() => setSidebarToggle(prev => !prev)} />
-                </nav>
+                <Navbar />
                 <Dashboard />
                 {/* footer */}
             </div>
